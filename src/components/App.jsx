@@ -3,7 +3,7 @@ import NavBar from './NavBar';
 import Header from './Header';
 import Schedule from './Schedule';
 import ProduceList from './ProduceList';
-
+import { Switch, Route } from 'react-router-dom';
 
 
 
@@ -19,10 +19,10 @@ function App(){
       `}</style>
       <NavBar/>
       <Header/>
-      <Schedule/>
-      <hr></hr>
-      <br></br>
-      <ProduceList/>
+      <Switch >
+        <Route path='/schedule' component={Schedule} />
+        <Route path='/produce' component={ProduceList} />
+      </Switch>
     </div>
   );
 }
