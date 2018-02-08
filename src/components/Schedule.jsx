@@ -1,65 +1,27 @@
 import React from 'react';
-import EventDetails from './EventDetails';
-
-const masterSchedule = [
-  {
-    day: 'Sunday',
-    location: 'Lents International',
-    hours: '9:00am - 2:00pm',
-    booth: '4A'
-  },
-  {
-    day: 'Monday',
-    location: 'Pioneer Courthouse Square',
-    hours: '10:00am - 2:00pm',
-    booth: '7C'
-  },
-  {
-    day: 'Tuesday',
-    location: 'Hillsboro',
-    hours: '5:00pm - 8:30pm',
-    booth: '1F'
-  },
-  {
-    day: 'Wednesday',
-    location: 'Shemanski Park',
-    hours: '10:00am - 2:00pm',
-    booth: '3E'
-  },
-  {
-    day: 'Thursday',
-    location: 'Northwest Portland',
-    hours: '2:00pm - 6:00pm',
-    booth: '6D'
-  },
-  {
-    day: 'Saturday',
-    location: 'Beaverton',
-    hours: '10:00am - 1:30pm',
-    booth: '9G'
-  }
-];
+import PropTypes from 'prop-types';
 
 
 
-function Schedule(){
+function Schedule(props){
   return (
-    <div style={{padding: '15px'}}>
-      <h2 style={{color: '#206040'}}>Schedule</h2>
-      <div className="row">
-        {masterSchedule.map((eventDetails, index) =>
-          <div className="col-md-4">
-            <EventDetails
-              day={eventDetails.day}
-              location={eventDetails.location}
-              hours={eventDetails.hours}
-              booth={eventDetails.booth}
-              key={index}/>
-          </div>
-        )}
-      </div>
+    <div style={{borderStyle: 'solid',
+      borderWidth: '2px',
+      borderColor: 'black',
+      padding: '30px',backgroundColor: '#33C4FF', height: '400px'}}>
+      <h5><strong>Day </strong>:{props.day}</h5>
+      <h5><strong>Location: </strong>{props.location}</h5>
+      <h5><strong>Hours: </strong>{props.hours}</h5>
+      <h5><strong>Booth: </strong>{props.booth}</h5>
     </div>
   );
 }
+
+Schedule.propTypes = {
+  day: PropTypes.string,
+  location: PropTypes.string,
+  hours: PropTypes.string,
+  booth: PropTypes.string
+};
 
 export default Schedule;

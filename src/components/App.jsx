@@ -1,8 +1,9 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Header from './Header';
-import Schedule from './Schedule';
+import ScheduleList from './ScheduleList';
 import ProduceList from './ProduceList';
+import Contact from './Contact';
 import { Switch, Route } from 'react-router-dom';
 
 
@@ -12,15 +13,15 @@ function App(){
     <div className="container">
       <style jsx global>{`
         body {
-          font-family: Helvetica;
+          font-family: Trebuchet MS;
           padding: 30px;
-          background-color: #b3e6cc;
+          background-color: #80DAFF;
         }
       `}</style>
       <NavBar/>
       <Header/>
       <Switch >
-        <Route path='/schedule' component={Schedule} />
+        <Route path='/schedule' component={ScheduleList} />
         <Route path='/produce' component={ProduceList} />
       </Switch>
     </div>

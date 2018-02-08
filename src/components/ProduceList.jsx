@@ -272,7 +272,10 @@ const availableProduce = [
 
 function ProduceList(){
   return (
-    <div style={{padding: '15px'}}>
+    <div style={{
+        padding: '15px',
+        marginHeight: '20px'
+      }}>
       <h2 style={{color: '#206040'}}>Available Produce</h2>
       <div className="row">
         {availableProduce.map((seasonAvailability, index) =>
